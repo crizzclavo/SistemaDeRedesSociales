@@ -101,6 +101,63 @@ public class testSistema {
 			System.out.println(e.getMessage());
 
 		}
+		
+		
+		try {
+			System.out.println("\n(5)");
+
+			
+			System.out.println(sistema.traerComentariosEnPosteosPorUsuario(sistema.traerUsuario("usuarioLector2")));
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		}
+		
+		
+		try {
+			System.out.println("\n(6)");
+
+			
+			System.out.println(sistema.traerPublicacionesQueContenganTexto("de"));
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		}
+		
+		
+		try {
+			System.out.println("\n(7)");
+
+			sistema.agregarUsuario("usuarioCreador1", LocalDate.of(2023, 9, 1));
+		
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		}
+
+		
+		try {
+			System.out.println("\n(8)");
+
+			sistema.agregarPosteo(LocalDate.of(2023, 10, 1), LocalTime.of(10, 00),
+					sistema.traerUsuario("usuarioCreador1"), "Que dia es el segundo parcial de OO1?", true);
+		
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+
+		}
 
 	}
 

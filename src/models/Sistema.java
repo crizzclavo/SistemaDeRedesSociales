@@ -198,8 +198,52 @@ public class Sistema {
 	
 	
 	
+	public List<Comentario> traerComentariosEnPosteosPorUsuario(Usuario usuario){
+		
+		List<Comentario> comentariosEnPosteo = new ArrayList <Comentario>();
+		
+		int i=0;
+		
+		while (i<lstComentarios.size()) {
+			
+			
+			if(lstComentarios.get(i).getUsuario().equals(usuario) && lstComentarios.get(i).getPublicacion() instanceof Posteo) {
+				
+				comentariosEnPosteo.add(lstComentarios.get(i));
+				
+				
+			}
+			
+			
+		i++;
+			
+		}
+		
+		return comentariosEnPosteo;
+	}
 	
-	
+	public List<Publicacion> traerPublicacionesQueContenganTexto(String texto){
+		
+		
+		List<Publicacion> publicacionesTexto= new ArrayList<Publicacion>();
+		
+		int i=0;
+		while (i<lstPublicacion.size()) {
+			
+			if(lstPublicacion.get(i).contieneTexto(texto)) {
+				
+				publicacionesTexto.add(lstPublicacion.get(i));
+				
+				
+			}
+			
+			
+			
+			i++;
+		}
+		
+		return publicacionesTexto;
+	}
 	
 	
 	
